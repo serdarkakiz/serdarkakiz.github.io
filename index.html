@@ -32,6 +32,9 @@ nav a:hover,nav a.on{color:var(--gold);border-color:var(--gold)}
 .soc a:hover{color:var(--gold)}
 .btn{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--plum);padding:11px 22px;border-radius:30px;font-weight:600;font-size:14px}
 .btn:hover{background:#f3d996}
+nav{align-items:center}
+nav a.btn{border:0;padding:10px 20px}
+nav a.btn:hover{color:var(--plum);border:0}
 .btn.out{background:transparent;border:1px solid var(--gold2);color:var(--ink);padding:9px 20px}
 /* hero */
 .hero{position:relative;min-height:420px;color:#fff;display:flex;align-items:center;overflow:hidden;
@@ -87,6 +90,7 @@ h2{font-family:var(--serif);font-size:34px;margin:4px 0 12px;font-weight:700}
 footer{background:var(--plum);color:#fff;border-top:1px solid var(--gold2);padding:22px 0 14px;font-size:13px}
 .ft{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
 .ft nav{font-size:12px;gap:20px}
+.fl{font-size:14px;font-weight:600;color:var(--gold);margin-right:6px}
 .cp{text-align:center;font-size:11.5px;color:#cbbbd6;margin-top:14px}
 /* about page */
 #page-hakkimda{display:none}
@@ -102,7 +106,7 @@ body.about #page-home{display:none}body.about #page-hakkimda{display:block}
 .svc{grid-template-columns:repeat(2,1fr);gap:20px 0}.svc a:nth-child(2n){border:0}
 .ab,.abt,.pgrid,.tst .wrap{grid-template-columns:1fr}.qt{border:0;padding:0}
 .grid,.qs{grid-template-columns:1fr 1fr}.script{display:none}
-nav{gap:16px;font-size:13px}.hd{justify-content:center}}
+#nav{gap:8px;font-size:12px;flex-wrap:nowrap;width:100%;justify-content:space-between}#nav a{white-space:nowrap}#nav a.btn{padding:7px 10px;font-size:12px;gap:5px}#nav a.btn svg{width:14px;height:14px}.hd{justify-content:center;padding:12px 16px}.fs{width:100%}.fs .fl{margin-right:auto}}
 @media(max-width:560px){.grid,.qs{grid-template-columns:1fr}}
 </style>
 </head>
@@ -131,17 +135,8 @@ nav{gap:16px;font-size:13px}.hd{justify-content:center}}
   <a href="#hakkimda" data-v="hakkimda">Hakkımda</a>
   <a href="#hizmetler">Hizmetler</a>
   <a href="#blog">Blog</a>
-  <a href="https://wa.me/905443913120?text=Merhaba%20siteniz%20%C3%BCzerinden%20size%20ula%C5%9F%C4%B1yorum" target="_blank" rel="noopener">Online Randevu</a>
-  <a href="#iletisim">İletişim</a>
- </nav>
- <div class="soc">
-  <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><svg class="i"><use href="#ig"/></svg></a>
-  <a href="https://youtube.com/@opncial?si=pbUAHxJXvrZGl8AV" target="_blank" rel="noopener" aria-label="YouTube"><svg class="i"><use href="#yt"/></svg></a>
-  <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="i"><use href="#in"/></svg></a>
-  <a href="https://wa.me/905443913120?text=Merhaba%20siteniz%20%C3%BCzerinden%20size%20ula%C5%9F%C4%B1yorum" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="i"><use href="#wa"/></svg></a>
-  <a href="mailto:info@ornek.com" aria-label="E-posta"><svg class="i"><use href="#ml"/></svg></a>
   <a class="btn" href="https://wa.me/905443913120?text=Merhaba%20siteniz%20%C3%BCzerinden%20size%20ula%C5%9F%C4%B1yorum" target="_blank" rel="noopener"><svg class="i"><use href="#cal"/></svg>Randevu Al</a>
- </div>
+ </nav>
 </div>
 </header>
 
@@ -219,11 +214,11 @@ nav{gap:16px;font-size:13px}.hd{justify-content:center}}
 <footer id="iletisim"><div class="wrap">
  <div class="ft">
   <a class="logo" href="#anasayfa"><span class="mono" style="width:46px;height:46px;font-size:32px">SK</span><span class="brand"><b style="font-size:20px">SERDAR KAKIZ</b><small>AİLE DANIŞMANI | YAŞAM KOÇU | YAZAR</small></span></a>
-  <nav><a href="#anasayfa">Ana Sayfa</a><a href="#hakkimda">Hakkımda</a><a href="#hizmetler">Hizmetler</a><a href="#blog">Blog</a><a href="https://wa.me/905443913120?text=Merhaba%20siteniz%20%C3%BCzerinden%20size%20ula%C5%9F%C4%B1yorum" target="_blank" rel="noopener">Online Randevu</a></nav>
-  <div class="soc">
+  
+  <div class="soc fs"><span class="fl">İletişim:</span>
    <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><svg class="i"><use href="#ig"/></svg></a>
    <a href="https://youtube.com/@opncial?si=pbUAHxJXvrZGl8AV" target="_blank" rel="noopener" aria-label="YouTube"><svg class="i"><use href="#yt"/></svg></a>
-   <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="i"><use href="#in"/></svg></a>
+   
    <a href="https://wa.me/905443913120?text=Merhaba%20siteniz%20%C3%BCzerinden%20size%20ula%C5%9F%C4%B1yorum" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="i"><use href="#wa"/></svg></a>
    <a href="mailto:info@ornek.com" aria-label="E-posta"><svg class="i"><use href="#ml"/></svg></a>
   </div>
