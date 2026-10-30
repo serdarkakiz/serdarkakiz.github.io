@@ -124,8 +124,18 @@ footer{background:var(--plum);color:#fff;border-top:1px solid var(--gold2);paddi
 .cp a:hover{color:var(--gold)}
 /* about page */
 #page-hakkimda{display:none}
+#page-kitap{display:none}
+body.kitap #page-home{display:none}body.kitap #page-kitap{display:block}
+.post{position:relative}.sl::after{content:"";position:absolute;inset:0}.sl:hover{color:var(--gold2)}
+.geri{display:inline-block;font-size:14px;font-weight:600;color:var(--gold2);margin-bottom:18px}
+.bkl{list-style:none;margin:26px 0 0;padding:0;max-width:760px}
+.bk{display:grid;grid-template-columns:44px 1fr;gap:16px;padding:20px 0;border-bottom:1px solid var(--line)}
+.bk .no{width:44px;height:44px;border-radius:50%;background:var(--plum2);color:var(--gold);display:grid;place-items:center;font-family:var(--serif);font-size:22px;font-weight:700}
+.pg .bk h3{font-family:var(--serif);font-size:24px;margin:0}
+.bk small{color:var(--gold2);font-weight:600;font-size:13px}
+.bk p{margin:6px 0 0}
 body.about #page-home{display:none}body.about #page-hakkimda{display:block}
-.pg{padding:50px 0}
+.pg{padding:50px 24px}
 .pgrid{display:grid;grid-template-columns:1fr 1.5fr;gap:44px;align-items:start}
 .pgrid .ph{min-height:420px;border-radius:10px}
 .pg h3{font-family:var(--serif);font-size:24px;margin:26px 0 8px}
@@ -242,7 +252,7 @@ body.about #page-home{display:none}body.about #page-hakkimda{display:block}
   <article class="post"><div class="th" style="background:linear-gradient(#f2b27a,#8a4a5a)"><span class="tag">Aile &amp; İlişkiler</span></div><div class="c"><h3>Aile İçi İletişimi Güçlendiren 5 Etkili Yöntem</h3><small>12 Ekim 2026 • 5 dk okuma</small></div></article>
   <article class="post"><div class="th" style="background:linear-gradient(#8aa0c0,#4a5a6a)"><span class="tag">Kişisel Gelişim</span></div><div class="c"><h3>Kendini Tanımak, Hayatını Yönlendirmektir</h3><small>10 Ekim 2026 • 4 dk okuma</small></div></article>
   <article class="post"><div class="th" style="background:linear-gradient(#a8b36a,#2f4a2a)"><span class="tag">Psikoloji</span></div><div class="c"><h3>Duygusal Zeka ve İlişkilerdeki Önemi</h3><small>8 Ekim 2026 • 6 dk okuma</small></div></article>
-  <article class="post"><div class="th" style="background:linear-gradient(#c58a5a,#4a2a1a)"><span class="tag">Kitap &amp; Tavsiye</span></div><div class="c"><h3>İlham Veren 5 Kitap Önerisi</h3><small>5 Ekim 2026 • 5 dk okuma</small></div></article>
+  <article class="post"><div class="th" style="background:linear-gradient(#c58a5a,#4a2a1a)"><span class="tag">Kitap &amp; Tavsiye</span></div><div class="c"><h3><a class="sl" href="#kitap-onerileri">İlham Veren 5 Kitap Önerisi</a></h3><small>5 Ekim 2026 • 5 dk okuma</small></div></article>
  </div>
 </section>
 
@@ -275,6 +285,21 @@ body.about #page-home{display:none}body.about #page-hakkimda{display:block}
  </div>
 </div></main>
 
+<main id="page-kitap"><div class="wrap pg">
+ <a class="geri" href="#blog">← Blog’a Dön</a>
+ <div class="lbl">KİTAP &amp; TAVSİYE</div>
+ <h2 style="font-size:40px">İlham Veren 5 Kitap Önerisi</h2>
+ <p style="max-width:640px">Kendini tanımak, iyi iletişim kurmak ve hayatına yön vermek isteyenler için beş kitap.</p>
+ <ol class="bkl">
+  <li class="bk"><span class="no">1</span><div><h3>Müthiş Psikoloji</h3><small>Destek Yayınları</small><p>Zihinsel sağlık ve kişisel gelişim üzerine, uzman psikologların hazırladığı bir kitap serisi. “Hayır Diyebilme Sanatı”, “Dünyaya Değil Kendine Meydan Oku” ve “Seni Yoran Her Şeyi Bırak” gibi kitaplar, kendini tanımak ve iç dünyasıyla barışmak isteyenlere yol gösterir.</p></div></li>
+  <li class="bk"><span class="no">2</span><div><h3>TED Gibi Konuş</h3><small>Carmine Gallo · Aganta Kitap</small><p>Yüzden fazla TED konuşmasını inceleyerek, topluluk önünde etkili konuşmanın dokuz sırrını anlatır. Fikirlerini daha güçlü ve akılda kalıcı biçimde aktarmak isteyen herkes için pratik bir rehberdir.</p></div></li>
+  <li class="bk"><span class="no">3</span><div><h3>Sınırsız Güç</h3><small>Anthony Robbins · İnkılap Kitabevi</small><p>Kişisel başarıda zirveye ulaşmanın yolunu anlatan, kişisel gelişim alanının tanınmış kitaplarından biri. İnsanın kendi içindeki gücü keşfetmesini ve alışkanlıklarını bilinçle değiştirmesini hedefler.</p></div></li>
+  <li class="bk"><span class="no">4</span><div><h3>İktidar: Güç Sahibi Olmanın 48 Yasası</h3><small>Robert Greene &amp; Joost Elffers · Altın Kitaplar</small><p>Güç ve etki kavramını tarihten örneklerle 48 yasa üzerinden işler. Tartışmalı bir kitap olduğu için eleştirel bir gözle okunmalı. Yine de insan ilişkilerindeki güç oyunlarını ve manipülasyonu fark etmeye yardımcı olabilir.</p></div></li>
+  <li class="bk"><span class="no">5</span><div><h3>Kırmızı Kitap</h3><small>C. G. Jung · Kaknüs Yayınları</small><p>Jung’un 1914 ile 1930 arasında kaleme aldığı, kendi resimleriyle bezeli içsel yolculuk kaydı (Liber Novus). Kolektif bilinçdışı gibi fikirlerinin ortaya çıkışını anlatır; ilk kez 2009’da yayımlandı.</p></div></li>
+ </ol>
+ <div class="ct"><a class="btn out" href="#blog">← Blog’a Dön</a></div>
+</div></main>
+
 <footer id="iletisim"><div class="wrap">
  <div class="ft">
   <a class="logo" href="#anasayfa"><span class="mono" style="width:46px;height:46px;font-size:32px">SK</span><span class="brand"><b style="font-size:20px">SERDAR KAKIZ</b><small>AİLE DANIŞMANI | YAŞAM KOÇU | YAZAR</small></span></a>
@@ -295,11 +320,12 @@ body.about #page-home{display:none}body.about #page-hakkimda{display:block}
 (function(){
  function route(){
   var h=(location.hash||"#anasayfa").slice(1);
-  var about=h==="hakkimda";
+  var about=h==="hakkimda",kitap=h==="kitap-onerileri";
   document.body.classList.toggle("about",about);
+  document.body.classList.toggle("kitap",kitap);
   var links=document.querySelectorAll("#nav a[data-v]");
-  for(var i=0;i<links.length;i++){links[i].classList.toggle("on",links[i].getAttribute("data-v")===(about?"hakkimda":"anasayfa"));}
-  if(about){window.scrollTo(0,0);return;}
+  for(var i=0;i<links.length;i++){links[i].classList.toggle("on",links[i].getAttribute("data-v")===(about?"hakkimda":(kitap?"-":"anasayfa")));}
+  if(about||kitap){window.scrollTo(0,0);return;}
   var el=document.getElementById(h);
   if(el){setTimeout(function(){el.scrollIntoView();},0);}else{window.scrollTo(0,0);}
  }
