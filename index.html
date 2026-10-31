@@ -193,6 +193,46 @@ body.about #page-home{display:none}body.about #page-hakkimda{display:block}
 .grid,.qs{grid-template-columns:1fr 1fr}.script{display:none}
 #nav{gap:8px;font-size:12px;flex-wrap:nowrap;width:100%;justify-content:space-between}#nav a{white-space:nowrap}#nav a.btn{padding:7px 10px;font-size:12px;gap:5px}#nav a.btn svg{width:14px;height:14px}.hd{justify-content:center;padding:12px 16px}.fs{width:100%}.fs .fl{margin-right:auto}}
 @media(max-width:560px){.grid,.qs{grid-template-columns:1fr}}
+
+/* kütüphane */
+#page-kutuphane{display:none}
+body.kutuphane #page-home{display:none}body.kutuphane #page-kutuphane{display:block}
+.lcta{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin:34px 0 0;padding:26px 30px;border:1px solid var(--line);background:var(--card);border-radius:16px}
+.lcta h2{margin:2px 0 4px;font-size:30px}
+.lcta p{margin:0;color:var(--muted);max-width:520px;font-size:14.5px}
+.kgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:28px}
+.kk{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 2px 10px rgba(29,42,13,.08);transition:transform .2s ease,box-shadow .2s ease}
+.kk:hover,.kk:focus-visible{transform:translateY(-4px);box-shadow:0 14px 30px rgba(29,42,13,.2)}
+.kk .kv{display:block;aspect-ratio:3/4;background:var(--plum2)}
+.kk .kv svg,.kk .kv img{width:100%;height:100%;display:block;object-fit:cover}
+.kk .kb{display:flex;flex-direction:column;gap:4px;padding:14px 16px 16px;flex:1}
+.kk small{color:var(--gold2);font-size:11px;letter-spacing:.14em;font-weight:600;text-transform:uppercase}
+.pg .kk h3{font-family:var(--serif);font-size:23px;line-height:1.15;margin:0}
+.kk .sp{margin-top:auto;padding-top:12px;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.kk .fy{font-size:18px;font-weight:700}
+.kk .sb{display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:var(--deep);padding:8px 14px;border-radius:30px;font-weight:600;font-size:13px}
+.kk:hover .sb{background:#f3d996}
+.kk .sb svg{width:16px;height:16px}
+@media(max-width:900px){.kgrid{grid-template-columns:repeat(2,1fr);gap:16px}.lcta{padding:22px 20px}}
+@media(max-width:360px){.kgrid{grid-template-columns:1fr}}
+/* kütüphane açılış animasyonu */
+#kapi{position:fixed;inset:0;z-index:150;pointer-events:none;visibility:hidden;transition:visibility 0s linear .65s}
+#kapi.on{visibility:visible;pointer-events:auto;transition:none}
+#kapi .kd{position:absolute;top:0;bottom:0;width:50.5%;background:var(--plum);transition:transform .55s cubic-bezier(.7,0,.3,1)}
+#kapi .kd.l{left:0;transform:translateX(-101%);border-right:1px solid var(--gold2)}
+#kapi .kd.r{right:0;transform:translateX(101%);border-left:1px solid var(--gold2)}
+#kapi.on .kd{transform:none}
+#kapi .kc{position:absolute;inset:0;display:grid;place-content:center;justify-items:center;gap:18px;color:var(--gold);text-align:center;opacity:0;transition:opacity .3s ease}
+#kapi.on .kc{opacity:1;transition-delay:.45s}
+#kapi .kc b{font-family:var(--serif);font-size:30px;letter-spacing:.12em;font-weight:600}
+#kapi .kc svg{width:110px;height:74px;fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+#kapi .fl{transform-origin:60px 40px;animation:cevir 1.2s ease-in-out infinite}
+@keyframes cevir{0%{transform:scaleX(1);opacity:1}60%{transform:scaleX(-1);opacity:1}100%{transform:scaleX(-1);opacity:0}}
+#kapi .bar{display:block;width:190px;height:3px;border-radius:3px;background:rgba(238,210,145,.25);overflow:hidden}
+#kapi .bar u{display:block;height:100%;width:0;background:var(--gold);text-decoration:none}
+#kapi.on .bar u{animation:dol 1.45s ease .5s forwards}
+@keyframes dol{to{width:100%}}
+@media (prefers-reduced-motion:reduce){#kapi{display:none}}
 </style>
 <script>
 (function(){
@@ -220,6 +260,7 @@ body.about #page-home{display:none}body.about #page-hakkimda{display:block}
 <body>
 <button id="tema" type="button" onclick="temaDegistir()" aria-label="Tema değiştir"><svg class="i moon" viewBox="0 0 24 24"><path d="M21 13.5A8.5 8.5 0 1 1 10.5 3a7 7 0 0 0 10.5 10.5z"/></svg><svg class="i sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
 <div id="acilis" aria-hidden="true"><div class="in"><div class="mono">SK</div><b>SERDAR KAKIZ</b><small>PSİKOLOJİ AİLE DANIŞMANI</small></div></div>
+<div id="kapi" aria-hidden="true" role="status"><div class="kd l"></div><div class="kd r"></div><div class="kc"><svg viewBox="0 0 120 80" aria-hidden="true"><path d="M60 14C48 8 28 8 10 12v54c18-4 38-4 50 2 12-6 32-6 50-2V12c-18-4-38-4-50 2z"/><path d="M60 14v54"/><path class="fl" d="M60 14C72 9 90 9 104 12v50c-14-3-30-3-44 2z" fill="currentColor" fill-opacity=".25"/></svg><b>Kütüphane açılıyor.</b><i class="bar"><u></u></i></div></div>
 <div id="rmodal" class="rm" hidden role="dialog" aria-modal="true" aria-labelledby="rbaslik">
  <div class="rbox">
   <button type="button" class="rx" id="rkapat" aria-label="Kapat">×</button>
@@ -304,6 +345,13 @@ body.about #page-home{display:none}body.about #page-hakkimda{display:block}
   <a class="btn" href="#yazar">Kitabı Keşfet <svg class="i"><use href="#ar"/></svg></a>
  </div>
 </div></section>
+
+<section class="wrap" id="kutuphane-bolum">
+ <div class="lcta">
+  <div><div class="lbl">KÜTÜPHANE</div><h2>Kitap Kütüphanesi</h2><p>Satın alabileceğiniz kitaplara göz atın. Beğendiğinize dokunun, kitabın adı ve fiyatıyla hazırlanmış sipariş mesajı WhatsApp’ta hazır gelsin.</p></div>
+  <a class="btn" href="#kutuphane" data-kutuphane><svg class="i"><use href="#bk"/></svg>Kütüphaneyi Aç <svg class="i"><use href="#ar"/></svg></a>
+ </div>
+</section>
 
 <section class="wrap blog" id="blog">
  <div class="bh"><div><div class="lbl">BLOG</div><h2>Son Yazılarım</h2></div></div>
@@ -487,6 +535,14 @@ body.about #page-home{display:none}body.about #page-hakkimda{display:block}
  </div>
 </div></main>
 
+<main id="page-kutuphane"><div class="wrap pg">
+ <a class="geri" href="#anasayfa">← Ana Sayfaya Dön</a>
+ <div class="lbl">KÜTÜPHANE</div>
+ <h2 style="font-size:40px">Kitap Kütüphanesi</h2>
+ <p style="max-width:640px">Bir kitaba dokunduğunuzda WhatsApp açılır ve kitabın adı ile fiyatı mesajda hazır gelir.</p>
+ <div class="kgrid" id="kgrid"></div>
+</div></main>
+
 <footer id="iletisim"><div class="wrap">
  <div class="ft">
   <a class="logo" href="#anasayfa"><span class="mono" style="width:46px;height:46px;font-size:32px">SK</span><span class="brand"><b style="font-size:20px">SERDAR KAKIZ</b><small>PSİKOLOJİ AİLE DANIŞMANI</small></span></a>
@@ -507,16 +563,17 @@ body.about #page-home{display:none}body.about #page-hakkimda{display:block}
 (function(){
  function route(){
   var h=(location.hash||"#anasayfa").slice(1);
-  var about=h==="hakkimda",kitap=h==="kitap-onerileri",yazar=h==="yazar",aile=h==="aile-iletisimi",tanim=h==="kendini-tanimak",danisma=h==="aile-danismanligi";
+  var about=h==="hakkimda",kitap=h==="kitap-onerileri",yazar=h==="yazar",aile=h==="aile-iletisimi",tanim=h==="kendini-tanimak",danisma=h==="aile-danismanligi",kutup=h==="kutuphane";
   document.body.classList.toggle("about",about);
   document.body.classList.toggle("kitap",kitap);
   document.body.classList.toggle("yazar",yazar);
   document.body.classList.toggle("aile",aile);
   document.body.classList.toggle("tanim",tanim);
   document.body.classList.toggle("danisma",danisma);
+  document.body.classList.toggle("kutuphane",kutup);
   var links=document.querySelectorAll("#nav a[data-v]");
-  for(var i=0;i<links.length;i++){links[i].classList.toggle("on",links[i].getAttribute("data-v")===(about?"hakkimda":((kitap||yazar||aile||tanim||danisma)?"-":"anasayfa")));}
-  if(about||kitap||yazar||aile||tanim||danisma){window.scrollTo(0,0);return;}
+  for(var i=0;i<links.length;i++){links[i].classList.toggle("on",links[i].getAttribute("data-v")===(about?"hakkimda":((kitap||yazar||aile||tanim||danisma||kutup)?"-":"anasayfa")));}
+  if(about||kitap||yazar||aile||tanim||danisma||kutup){window.scrollTo(0,0);return;}
   var el=document.getElementById(h);
   if(el){setTimeout(function(){el.scrollIntoView();},0);}else{window.scrollTo(0,0);}
  }
@@ -578,5 +635,86 @@ body.about #page-home{display:none}body.about #page-hakkimda{display:block}
 })();
 </script>
 <script>(function(){var s=document.querySelector("#page-yazar .kt img"),d=document.getElementById("kitapana");if(s&&d){d.src=s.src;}})();</script>
+<script>
+(function(){
+ /* ===== KİTAP LİSTESİ: ad, tür ve fiyatı buradan değiştirebilirsiniz. =====
+    Gerçek kapak eklemek için kitabın satırına resim ekleyin, örn: resim:"kapaklar/evin-isigi.jpg"
+    (resim yazılmazsa otomatik kapak çizilir). WhatsApp mesajı ad ve fiyattan kendiliğinden oluşur. */
+ var NUMARA="905443913120";
+ var KITAPLAR=[
+  {ad:"Evin Işığı",tur:"Aile",fiyat:129.90},
+  {ad:"Kalbin Pusulası",tur:"Kişisel Gelişim",fiyat:149.00},
+  {ad:"Dinlemenin Sanatı",tur:"İletişim",fiyat:99.50},
+  {ad:"Sabır Bahçesi",tur:"Manevi",fiyat:179.90},
+  {ad:"Bir Çay Daha",tur:"Roman",fiyat:119.00},
+  {ad:"Yarının Aileleri",tur:"Aile",fiyat:159.90},
+  {ad:"İçimdeki Ses",tur:"Kişisel Gelişim",fiyat:89.90},
+  {ad:"Mevsimler ve Sofralar",tur:"Deneme",fiyat:139.00},
+  {ad:"Küçük Adımlar",tur:"Yaşam Koçluğu",fiyat:169.50},
+  {ad:"Gönülden Gönüle",tur:"Manevi",fiyat:109.90}
+ ];
+ var RENK=[["#4c6a28","#1d2a0d"],["#a8842f","#4a3510"],["#2b4a5c","#0f1f2b"],["#7a3b4a","#2e1219"],["#6f8f48","#2f4519"],["#3d3a6b","#15132e"],["#b5651d","#4a2208"],["#1f6b64","#0a2b28"],["#5c4a2e","#221a0e"],["#8c3b3b","#2b1010"]];
+ var G="#eed291";
+ var MOTIF=[
+  '<path d="M95 300L150 250L205 300V350H95Z" fill="'+G+'"/><rect x="138" y="316" width="24" height="34" fill="#1d2a0d" fill-opacity=".6"/><circle cx="150" cy="218" r="14" fill="#fff" fill-opacity=".55"/>',
+  '<circle cx="150" cy="285" r="62" fill="none" stroke="'+G+'" stroke-width="4"/><path d="M150 235L165 285L150 335L135 285Z" fill="'+G+'"/><circle cx="150" cy="285" r="5" fill="#1d2a0d"/>',
+  '<g fill="none" stroke="'+G+'" stroke-width="5" stroke-linecap="round"><path d="M185 250a45 45 0 0 1 0 70"/><path d="M205 235a70 70 0 0 1 0 100"/><path d="M225 220a95 95 0 0 1 0 130"/></g><circle cx="130" cy="285" r="22" fill="'+G+'"/>',
+  '<rect x="144" y="290" width="12" height="62" fill="'+G+'" fill-opacity=".8"/><circle cx="150" cy="265" r="42" fill="'+G+'"/><circle cx="120" cy="292" r="26" fill="'+G+'" fill-opacity=".7"/><circle cx="180" cy="292" r="26" fill="'+G+'" fill-opacity=".7"/>',
+  '<path d="M105 270h90v36a45 45 0 0 1-90 0Z" fill="'+G+'"/><path d="M195 280h12a16 16 0 0 1 0 32h-14" fill="none" stroke="'+G+'" stroke-width="7"/><path d="M130 250q-8-14 0-26M155 252q-8-14 0-26M180 250q-8-14 0-26" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width="4" stroke-linecap="round"/><rect x="90" y="360" width="120" height="6" rx="3" fill="'+G+'" fill-opacity=".6"/>',
+  '<circle cx="110" cy="262" r="18" fill="'+G+'"/><path d="M84 345v-45a26 26 0 0 1 52 0v45Z" fill="'+G+'"/><circle cx="190" cy="262" r="18" fill="'+G+'"/><path d="M164 345v-45a26 26 0 0 1 52 0v45Z" fill="'+G+'"/><circle cx="150" cy="294" r="13" fill="#fff" fill-opacity=".85"/><path d="M133 345v-28a17 17 0 0 1 34 0v28Z" fill="#fff" fill-opacity=".85"/>',
+  '<g fill="'+G+'"><rect x="72" y="285" width="10" height="30" rx="5"/><rect x="92" y="265" width="10" height="70" rx="5"/><rect x="112" y="240" width="10" height="120" rx="5"/><rect x="132" y="258" width="10" height="84" rx="5"/><rect x="152" y="230" width="10" height="140" rx="5"/><rect x="172" y="262" width="10" height="76" rx="5"/><rect x="192" y="248" width="10" height="104" rx="5"/><rect x="212" y="276" width="10" height="48" rx="5"/></g>',
+  '<circle cx="150" cy="255" r="34" fill="'+G+'"/><path d="M20 360Q100 290 170 330T290 310V390H20Z" fill="#fff" fill-opacity=".35"/><path d="M20 380Q120 320 190 350T290 340V400H20Z" fill="'+G+'" fill-opacity=".6"/>',
+  '<path d="M85 370V350h40v-30h40v-30h40v-30h25v110Z" fill="'+G+'"/><path d="M200 236l10-22 10 22Z" fill="#fff" fill-opacity=".85"/>',
+  '<path d="M150 350C90 305 85 255 118 245c20-6 32 6 32 22 0-16 12-28 32-22 33 10 28 60-32 105Z" fill="'+G+'"/><circle cx="212" cy="236" r="6" fill="#fff" fill-opacity=".8"/><circle cx="92" cy="268" r="4" fill="#fff" fill-opacity=".6"/>'
+ ];
+ function esc(t){return String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+ function fmt(n){return n.toFixed(2).replace(".",",")+" ₺";}
+ function sar(t,m){var w=t.split(" "),s=[],c="";for(var i=0;i<w.length;i++){if(c&&(c+" "+w[i]).length>m){s.push(c);c=w[i];}else{c=c?c+" "+w[i]:w[i];}}if(c)s.push(c);return s;}
+ function kapak(k,i){
+  var c=RENK[i%RENK.length],L=sar(k.ad,11),mx=0,j,fs;
+  for(j=0;j<L.length;j++){if(L[j].length>mx)mx=L[j].length;}
+  fs=mx<=9?38:32;
+  var t="";
+  for(j=0;j<L.length;j++){t+='<text x="150" y="'+Math.round(112+j*fs*1.15)+'" text-anchor="middle" font-family="Cormorant Garamond,Georgia,serif" font-weight="700" font-size="'+fs+'" fill="#f5f8ee">'+esc(L[j])+'</text>';}
+  return '<svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="kg'+i+'" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="'+c[0]+'"/><stop offset="1" stop-color="'+c[1]+'"/></linearGradient><clipPath id="kc'+i+'"><rect x="26" y="26" width="248" height="348"/></clipPath></defs>'
+   +'<rect width="300" height="400" fill="url(#kg'+i+')"/>'
+   +'<g clip-path="url(#kc'+i+')">'+MOTIF[i%MOTIF.length]+'</g>'
+   +'<rect x="26" y="26" width="248" height="348" fill="none" stroke="'+G+'" stroke-opacity=".5" stroke-width="1.5"/>'
+   +'<text x="150" y="62" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="11" letter-spacing="3" fill="'+G+'">'+esc(k.tur.toLocaleUpperCase("tr"))+'</text>'
+   +t+'<rect width="16" height="400" fill="#000" fill-opacity=".22"/><rect x="16" width="3" height="400" fill="#fff" fill-opacity=".12"/></svg>';
+ }
+ var g=document.getElementById("kgrid");
+ if(g){
+  var h="";
+  for(var i=0;i<KITAPLAR.length;i++){
+   var k=KITAPLAR[i],fy=fmt(k.fiyat);
+   var msg="Merhaba, sitenizden “"+k.ad+"” kitabını ("+fy+") satın almak istiyorum.";
+   var url="https://wa.me/"+NUMARA+"?text="+encodeURIComponent(msg);
+   h+='<a class="kk" href="'+url+'" target="_blank" rel="noopener" aria-label="'+esc(k.ad)+", "+fy+', WhatsApp ile sipariş ver">'
+    +'<span class="kv">'+(k.resim?'<img src="'+esc(k.resim)+'" alt="">':kapak(k,i))+'</span>'
+    +'<span class="kb"><small>'+esc(k.tur)+'</small><h3>'+esc(k.ad)+'</h3>'
+    +'<span class="sp"><b class="fy">'+fy+'</b><span class="sb"><svg class="i"><use href="#wa"/></svg>Sipariş Ver</span></span></span></a>';
+  }
+  g.innerHTML=h;
+ }
+ /* ===== "Kütüphane açılıyor." geçişi ===== */
+ var kapi=document.getElementById("kapi"),busy=false;
+ var az=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+ function git(e){
+  e.preventDefault();
+  if(busy||!kapi)return;
+  if(az){location.hash="kutuphane";return;}
+  busy=true;
+  kapi.classList.add("on");kapi.setAttribute("aria-hidden","false");
+  setTimeout(function(){
+   location.hash="kutuphane";
+   kapi.classList.remove("on");kapi.setAttribute("aria-hidden","true");
+   setTimeout(function(){busy=false;},800);
+  },2000);
+ }
+ var bs=document.querySelectorAll("a[data-kutuphane]");
+ for(var b=0;b<bs.length;b++){bs[b].addEventListener("click",git);}
+})();
+</script>
 </body>
 </html>
