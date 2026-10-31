@@ -78,7 +78,8 @@ h2{font-family:var(--serif);font-size:34px;margin:4px 0 12px;font-weight:700}
 .bh h2{margin:0}
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 .post{background:var(--card);border-radius:8px;overflow:hidden;box-shadow:0 2px 10px rgba(42,18,56,.08)}
-.th{height:100px;position:relative}
+.th{height:150px;position:relative}
+.th svg{position:absolute;inset:0;width:100%;height:100%;display:block}
 .tag{position:absolute;left:10px;bottom:-9px;background:var(--gold);color:var(--deep);font-size:11px;font-weight:600;padding:2px 10px;border-radius:12px}
 .post div.c{padding:18px 14px 14px}
 .post h3{font-family:var(--serif);font-size:17px;margin:0 0 8px;line-height:1.25}
@@ -139,6 +140,10 @@ body.yazar #page-home{display:none}body.yazar #page-yazar{display:block}
 .kt dt{color:var(--muted);font-size:12px;letter-spacing:.14em}
 .kt dd{margin:0;font-weight:600}
 @media(max-width:760px){.kt{grid-template-columns:1fr;gap:30px}.kt img{max-width:320px;margin:0 auto}}
+#page-tanim{display:none}
+body.tanim #page-home{display:none}body.tanim #page-tanim{display:block}
+#page-aile{display:none}
+body.aile #page-home{display:none}body.aile #page-aile{display:block}
 /* footer */
 footer{background:var(--plum);color:#fff;border-top:1px solid var(--gold2);padding:22px 0 14px;font-size:13px}
 .ft{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
@@ -273,12 +278,12 @@ body.about #page-home{display:none}body.about #page-hakkimda{display:block}
 </section>
 
 <section class="wrap blog" id="blog">
- <div class="bh"><div><div class="lbl">BLOG</div><h2>Son Yazılarım</h2></div><a href="#blog" style="font-size:13px;font-weight:600">Tüm Yazıları Gör →</a></div>
+ <div class="bh"><div><div class="lbl">BLOG</div><h2>Son Yazılarım</h2></div></div>
  <div class="grid">
-  <article class="post"><div class="th" style="background:linear-gradient(#f2b27a,#8a4a5a)"><span class="tag">Aile &amp; İlişkiler</span></div><div class="c"><h3>Aile İçi İletişimi Güçlendiren 5 Etkili Yöntem</h3><small>12 Ekim 2026 • 5 dk okuma</small></div></article>
-  <article class="post"><div class="th" style="background:linear-gradient(#8aa0c0,#4a5a6a)"><span class="tag">Kişisel Gelişim</span></div><div class="c"><h3>Kendini Tanımak, Hayatını Yönlendirmektir</h3><small>10 Ekim 2026 • 4 dk okuma</small></div></article>
-  <article class="post"><div class="th" style="background:linear-gradient(#a8b36a,#2f4a2a)"><span class="tag">Psikoloji</span></div><div class="c"><h3>Duygusal Zeka ve İlişkilerdeki Önemi</h3><small>8 Ekim 2026 • 6 dk okuma</small></div></article>
-  <article class="post"><div class="th" style="background:linear-gradient(#c58a5a,#4a2a1a)"><span class="tag">Kitap &amp; Tavsiye</span></div><div class="c"><h3><a class="sl" href="#kitap-onerileri">İlham Veren 5 Kitap Önerisi</a></h3><small>5 Ekim 2026 • 5 dk okuma</small></div></article>
+  <article class="post"><div class="th"><svg viewBox='0 0 320 150' preserveAspectRatio='xMidYMid slice' aria-hidden='true'><defs><linearGradient id='g1' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#f8dfae'/><stop offset='1' stop-color='#e8a56c'/></linearGradient></defs><rect width='320' height='150' fill='url(#g1)'/><circle cx='252' cy='38' r='18' fill='#fff3d0' opacity='.85'/><path d='M0 116Q80 96 160 110T320 102V150H0Z' fill='#749253'/><path d='M0 132Q90 116 180 128T320 122V150H0Z' fill='#4c6a28'/><g fill='#2f4519'><circle cx='118' cy='80' r='9'/><path d='M103 128c0-25 6-37 15-37s15 12 15 37z'/><circle cx='156' cy='77' r='9.5'/><path d='M140 128c0-27 7-40 16-40s16 13 16 40z'/><circle cx='190' cy='100' r='6.5'/><path d='M180 128c0-14 4-22 10-22s10 8 10 22z'/></g><rect x='92' y='34' width='44' height='26' rx='13' fill='#fbf5e6'/><path d='M112 59l-6 9 14-9z' fill='#fbf5e6'/><circle cx='106' cy='47' r='2.4' fill='#b8924a'/><circle cx='114' cy='47' r='2.4' fill='#b8924a'/><circle cx='122' cy='47' r='2.4' fill='#b8924a'/><rect x='152' y='26' width='50' height='28' rx='14' fill='#eed291'/><path d='M168 53l7 9 3-9z' fill='#eed291'/><path transform='translate(177 40)' d='M0 6C-10-2-6-11 0-6 6-11 10-2 0 6Z' fill='#c9503e'/></svg><span class="tag">Aile &amp; İlişkiler</span></div><div class="c"><h3><a class="sl" href="#aile-iletisimi">Aile İçi İletişimi Güçlendiren 5 Etkili Yöntem</a></h3><small>12 Ekim 2026 • 5 dk okuma</small></div></article>
+  <article class="post"><div class="th"><svg viewBox='0 0 320 150' preserveAspectRatio='xMidYMid slice' aria-hidden='true'><defs><linearGradient id='g2' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#9fb8d6'/><stop offset='.55' stop-color='#f3e2b8'/><stop offset='1' stop-color='#f3e2b8'/></linearGradient></defs><rect width='320' height='150' fill='url(#g2)'/><circle cx='160' cy='64' r='20' fill='#fff1c9'/><path d='M0 84L50 56 92 78 130 48 175 80 220 52 270 80 320 62V86H0Z' fill='#7d9a86'/><rect y='84' width='320' height='66' fill='#6f95a8'/><path d='M132 94h56M142 102h36M148 110h24' stroke='#fff1c9' stroke-width='2' stroke-linecap='round' opacity='.6'/><path d='M0 150V124Q60 110 130 126L170 150Z' fill='#3a5226'/><circle cx='96' cy='102' r='6' fill='#1d2a0d'/><path d='M86 128c0-17 4-24 10-24s10 7 10 24z' fill='#1d2a0d'/></svg><span class="tag">Kişisel Gelişim</span></div><div class="c"><h3><a class="sl" href="#kendini-tanimak">Kendini Tanımak, Hayatını Yönlendirmektir</a></h3><small>10 Ekim 2026 • 4 dk okuma</small></div></article>
+  <article class="post"><div class="th"><svg viewBox='0 0 320 150' preserveAspectRatio='xMidYMid slice' aria-hidden='true'><defs><linearGradient id='g3' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#b6cf86'/><stop offset='1' stop-color='#4c6a28'/></linearGradient></defs><rect width='320' height='150' fill='url(#g3)'/><g fill='none' stroke='#f5f8ee' opacity='.28'><circle cx='160' cy='76' r='30'/><circle cx='160' cy='76' r='48'/><circle cx='160' cy='76' r='66'/></g><path d='M160 100C128 76 138 50 160 64 182 50 192 76 160 100Z' fill='#f6e3a1'/><path d='M110 86Q130 62 144 70M210 86Q190 62 176 70' stroke='#f5f8ee' stroke-width='2' stroke-dasharray='3 5' fill='none'/><g fill='#f5f8ee'><circle cx='92' cy='96' r='9'/><path d='M76 136c0-18 7-27 16-27s16 9 16 27z'/><circle cx='228' cy='96' r='9'/><path d='M212 136c0-18 7-27 16-27s16 9 16 27z'/></g></svg><span class="tag">Psikoloji</span></div><div class="c"><h3>Duygusal Zeka ve İlişkilerdeki Önemi</h3><small>8 Ekim 2026 • 6 dk okuma</small></div></article>
+  <article class="post"><div class="th"><svg viewBox='0 0 320 150' preserveAspectRatio='xMidYMid slice' aria-hidden='true'><defs><linearGradient id='g4' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#d9a468'/><stop offset='1' stop-color='#5a3a24'/></linearGradient><radialGradient id='r4'><stop offset='0' stop-color='#fff3c4' stop-opacity='.9'/><stop offset='1' stop-color='#fff3c4' stop-opacity='0'/></radialGradient></defs><rect width='320' height='150' fill='url(#g4)'/><circle cx='232' cy='46' r='46' fill='url(#r4)'/><g opacity='.35'><rect x='8' y='40' width='10' height='70' fill='#3b2616'/><rect x='20' y='52' width='12' height='58' fill='#6b4a2e'/><rect x='34' y='36' width='9' height='74' fill='#3b2616'/><rect x='45' y='58' width='11' height='52' fill='#8a5a36'/><rect x='270' y='44' width='11' height='66' fill='#3b2616'/><rect x='283' y='34' width='10' height='76' fill='#6b4a2e'/><rect x='295' y='54' width='12' height='56' fill='#8a5a36'/></g><rect x='0' y='122' width='320' height='28' fill='#3b2616'/><rect x='98' y='108' width='104' height='14' rx='2' fill='#8a3f2e'/><rect x='104' y='94' width='92' height='14' rx='2' fill='#4c6a28'/><rect x='100' y='80' width='96' height='14' rx='2' fill='#c58a3a'/><g fill='#f5ecd4'><rect x='198' y='109' width='4' height='12'/><rect x='192' y='95' width='4' height='12'/><rect x='194' y='81' width='4' height='12'/></g><g fill='#eed291'><rect x='112' y='112' width='30' height='2'/><rect x='116' y='98' width='24' height='2'/><rect x='112' y='84' width='28' height='2'/></g><path d='M214 104h18v10a9 9 0 01-18 0z' fill='#f5f8ee'/><path d='M232 107h4a4 4 0 010 8h-4' stroke='#f5f8ee' stroke-width='2' fill='none'/><path d='M220 100q-3-5 0-9M227 100q-3-5 0-9' stroke='#fff3c4' stroke-width='1.5' fill='none' opacity='.8'/><path transform='translate(150 58)' d='M0-8l2.4 5.6L8 0 2.4 2.4 0 8-2.4 2.4-8 0l5.6-2.4z' fill='#fff3c4'/></svg><span class="tag">Kitap &amp; Tavsiye</span></div><div class="c"><h3><a class="sl" href="#kitap-onerileri">İlham Veren 5 Kitap Önerisi</a></h3><small>5 Ekim 2026 • 5 dk okuma</small></div></article>
  </div>
 </section>
 
@@ -343,6 +348,76 @@ body.about #page-home{display:none}body.about #page-hakkimda{display:block}
  <div class="ct"><a class="btn out" href="#blog">← Blog’a Dön</a></div>
 </div></main>
 
+<main id="page-tanim"><div class="wrap pg">
+ <a class="geri" href="#blog">← Blog’a Dön</a>
+ <div class="lbl">KİŞİSEL GELİŞİM</div>
+ <h2 style="font-size:40px">Kendini Tanımak, Hayatını Yönlendirmektir</h2>
+ <div style="max-width:720px">
+  <p>Kendini tanımak kulağa basit gelir, ama psikolojide onlarca yıldır üzerinde çalışılan bir konudur. Psikologlar buna <strong>öz farkındalık</strong> (self-awareness) der. Bu yazıda bilimin bu kavramdan ne anladığını ve günlük hayatta nasıl geliştirebileceğinizi özetledik.</p>
+
+  <h3>Psikolojide kendini tanımak ne demek?</h3>
+  <p>Öz farkındalık, kişinin kendi düşüncelerini, duygularını, değerlerini ve davranışlarını fark edip anlayabilmesidir. Bu alandaki ilk köklü kuramlardan biri, 1972’de Shelley Duval ve Robert Wicklund’un ortaya koyduğu Nesnel Öz-Farkındalık Kuramı’dır. Kurama göre dikkatimizi kendimize çevirdiğimizde, o anki davranışımızı kendi iç ölçütlerimizle ve değerlerimizle karşılaştırırız. Bu karşılaştırma ilk bakışta rahatsız edici olabilir, ama kişiyi değişmeye ve kendini geliştirmeye de yöneltebilir.</p>
+
+  <h3>İki farklı kendini tanıma biçimi</h3>
+  <p>Örgüt psikoloğu Tasha Eurich ve ekibi, yaklaşık 5.000 kişiyle yürüttükleri on ayrı çalışmada öz farkındalığın iki türü olduğunu öne sürdü (Harvard Business Review, 2018):</p>
+  <ul>
+   <li><strong>İçsel öz farkındalık:</strong> Değerlerinizi, hedeflerinizi, tepkilerinizi ve başkaları üzerindeki etkinizi ne kadar net gördüğünüz.</li>
+   <li><strong>Dışsal öz farkındalık:</strong> Başkalarının sizi nasıl gördüğünü ne kadar iyi anladığınız.</li>
+  </ul>
+  <p>Araştırmacılar bu ikisi arasında neredeyse hiçbir ilişki bulmadı. Yani kendini çok iyi tanıyan biri başkalarına nasıl göründüğünü bilmeyebilir, tersi de olabilir. İçsel öz farkındalık daha yüksek iş ve ilişki memnuniyeti, daha çok mutluluk ve daha az kaygı, stres ve depresyonla ilişkili bulundu. Dışsal öz farkındalık ise empati kurma ve başkalarının bakış açısını anlama becerisiyle ilişkiliydi. Ekip, çalışmaya katılanların yalnızca yaklaşık yüzde 10-15’inin öz farkındalık ölçütlerine uyduğunu tahmin etti. Bu rakam bir tahmindir, kesin bir nüfus oranı değildir.</p>
+
+  <h3>Benlik netliği</h3>
+  <p>Psikolog Jennifer Campbell ve arkadaşları 1996’da “benlik kavramı netliği” fikrini geliştirdi. Bu kavram, kişinin kendine dair inançlarının ne kadar net, istikrarlı ve tutarlı olduğunu anlatır. Araştırmalar, kendini net tanımlayabilmenin daha yüksek özsaygıyla ve daha az depresyon belirtisiyle ilişkili olduğunu bildiriyor.</p>
+
+  <h3>Sadece içe bakmak yeterli değil</h3>
+  <p>Kendini tanımak için uzun uzun düşünmek her zaman işe yaramaz. Eurich’in araştırmasına göre bilinçdışı düşüncelerimizin ve güdülerimizin birçoğuna doğrudan erişemiyoruz. Bu yüzden “Neden böyle hissediyorum?” sorusu kişiyi bazen döngüye sokabilir. Araştırmada “ne” soruları daha yararlı görüldü: “Bu durumda ne hissediyorum?”, “Bu duygu hangi anlarda yoğunlaşıyor?” Bir de dışarıdan bakış gerekir. Size iyilik isteyen ve dürüst olabilen birinden geri bildirim almak, kör noktalarınızı görmenize yardımcı olur.</p>
+
+  <h3>Günlük hayatta nasıl geliştirilir?</h3>
+  <ul>
+   <li><strong>Yazın:</strong> Günün sonunda birkaç dakika ayırıp bugün ne hissettiğinizi ve neye nasıl tepki verdiğinizi not edin.</li>
+   <li><strong>Duygularınıza ad verin:</strong> “Kızgınım” demekle “Kırıldım ve görülmediğimi hissettim” demek farklı şeylerdir.</li>
+   <li><strong>Değerlerinizi belirleyin:</strong> Sizin için en önemli üç şey ne? Son haftada kararlarınız bunlarla uyumlu muydu?</li>
+   <li><strong>Güvendiğiniz birine sorun:</strong> “Beni güçlü ve geliştirmem gereken yönlerimle nasıl görüyorsun?”</li>
+   <li><strong>Anda kalın:</strong> Her gün birkaç dakika nefesinize ve bedeninize dikkat edin.</li>
+  </ul>
+  <p>Kendini tanımak kendini yargılamak demek değildir. Amaç, kendinizi merakla ve şefkatle gözlemleyip hayatınıza bilinçli yön verebilmektir.</p>
+
+  
+  <div class="ct">
+   <a class="btn out" href="#blog">← Blog’a Dön</a>
+  </div>
+
+  <div style="margin-top:34px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)">
+   <p style="margin:0 0 8px">Bu yazı genel bilgi amaçlıdır; psikolojik tanı ya da tedavinin yerini tutmaz.</p>
+   <strong>Kaynaklar</strong>
+   <ul style="margin:6px 0 0">
+    <li>Duval, S. ve Wicklund, R. A. (1972). <em>A Theory of Objective Self-Awareness.</em></li>
+    <li>Campbell, J. D. ve ark. (1996). Self-concept clarity: Measurement, personality correlates, and cultural boundaries. <em>Journal of Personality and Social Psychology, 70</em>(1), 141-156.</li>
+    <li>Eurich, T. (2018). What Self-Awareness Really Is (and How to Cultivate It). <em>Harvard Business Review.</em></li>
+   </ul>
+  </div>
+ </div>
+</div></main>
+
+<main id="page-aile"><div class="wrap pg">
+ <a class="geri" href="#blog">← Blog’a Dön</a>
+ <div class="lbl">AİLE &amp; İLİŞKİLER</div>
+ <h2 style="font-size:40px">Aile İçi İletişimi Güçlendiren 5 Etkili Yöntem</h2>
+ <p style="max-width:640px">Aile içinde sağlıklı iletişim bir gecede değil, küçük ve düzenli alışkanlıklarla kurulur. İşte evde hemen deneyebileceğiniz beş yöntem.</p>
+ <ol class="bkl">
+  <li class="bk"><span class="no">1</span><div><h3>Gerçekten dinleyin</h3><p>Konuşan kişiyi bölmeden, telefonunuzu bırakıp gözüne bakarak dinleyin. Cevap vermeden önce duyduklarınızı kendi cümlenizle tekrar edin: “Yanlış anlamadıysam şunu söylüyorsun...” Bu, karşınızdakinin anlaşıldığını hissetmesini sağlar.</p></div></li>
+  <li class="bk"><span class="no">2</span><div><h3>“Sen” yerine “ben” dilini kullanın</h3><p>“Hep geç geliyorsun” yerine “Geç kaldığında kaygılanıyorum” deyin. Suçlamak yerine kendi duygunuzu anlatmak, karşı tarafın savunmaya geçmesini azaltır.</p></div></li>
+  <li class="bk"><span class="no">3</span><div><h3>Duyguları küçümsemeyin, adlandırın</h3><p>“Abartıyorsun” yerine “Bu seni üzmüş, anlıyorum” demeyi deneyin. Aynı fikirde olmasanız bile duygunun geçerli olduğunu kabul etmek konuşmanın kapısını açık tutar. Çocuklarla da duyguları kelimelere dökmeyi birlikte öğrenebilirsiniz.</p></div></li>
+  <li class="bk"><span class="no">4</span><div><h3>Doğru zamanı seçin, gerekirse mola verin</h3><p>Yorgunken, açken ya da öfkeliyken yapılan konuşmalar çoğu zaman büyür. Gerginlik yükseldiğinde “Sakinleşip yarım saat sonra devam edelim” demek kaçış değil, saygıdır. Önemli olan konuşmaya geri dönmektir.</p></div></li>
+  <li class="bk"><span class="no">5</span><div><h3>Düzenli aile zamanı ayırın</h3><p>Haftada bir kez, telefonların kapalı olduğu kısa bir aile sohbeti ya da ortak yemek koyun. Sorun yokken de konuşmak, sorun çıktığında konuşmayı kolaylaştırır.</p></div></li>
+ </ol>
+ <p style="max-width:640px;margin-top:24px">Bu yöntemler her ailede aynı şekilde işlemeyebilir. Aile içi iletişimde takıldığınız bir konu varsa birlikte çalışabiliriz.</p>
+ <div class="ct">
+  <a class="btn js-randevu" href="#mesaj"><svg class="i"><use href="#msg"/></svg>Bize yazın</a>
+  <a class="btn out" href="#blog">← Blog’a Dön</a>
+ </div>
+</div></main>
+
 <main id="page-yazar"><div class="wrap pg">
  <a class="geri" href="#anasayfa">← Ana Sayfaya Dön</a>
  <div class="kt">
@@ -383,13 +458,15 @@ body.about #page-home{display:none}body.about #page-hakkimda{display:block}
 (function(){
  function route(){
   var h=(location.hash||"#anasayfa").slice(1);
-  var about=h==="hakkimda",kitap=h==="kitap-onerileri",yazar=h==="yazar";
+  var about=h==="hakkimda",kitap=h==="kitap-onerileri",yazar=h==="yazar",aile=h==="aile-iletisimi",tanim=h==="kendini-tanimak";
   document.body.classList.toggle("about",about);
   document.body.classList.toggle("kitap",kitap);
   document.body.classList.toggle("yazar",yazar);
+  document.body.classList.toggle("aile",aile);
+  document.body.classList.toggle("tanim",tanim);
   var links=document.querySelectorAll("#nav a[data-v]");
-  for(var i=0;i<links.length;i++){links[i].classList.toggle("on",links[i].getAttribute("data-v")===(about?"hakkimda":((kitap||yazar)?"-":"anasayfa")));}
-  if(about||kitap||yazar){window.scrollTo(0,0);return;}
+  for(var i=0;i<links.length;i++){links[i].classList.toggle("on",links[i].getAttribute("data-v")===(about?"hakkimda":((kitap||yazar||aile||tanim)?"-":"anasayfa")));}
+  if(about||kitap||yazar||aile||tanim){window.scrollTo(0,0);return;}
   var el=document.getElementById(h);
   if(el){setTimeout(function(){el.scrollIntoView();},0);}else{window.scrollTo(0,0);}
  }
@@ -416,7 +493,7 @@ body.about #page-home{display:none}body.about #page-hakkimda{display:block}
  if(!m||!b)return;
  function ac(){m.hidden=false;document.body.style.overflow="hidden";h.textContent="";setTimeout(function(){t.focus();},60);}
  function kapat(){m.hidden=true;document.body.style.overflow="";}
- b.addEventListener("click",function(e){e.preventDefault();ac();});
+ var bs=document.querySelectorAll("#nav a.btn,.js-randevu");for(var i=0;i<bs.length;i++){bs[i].addEventListener("click",function(e){e.preventDefault();ac();});}
  document.getElementById("rkapat").addEventListener("click",kapat);
  m.addEventListener("click",function(e){if(e.target===m){kapat();}});
  document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!m.hidden){kapat();}});
