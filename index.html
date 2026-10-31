@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Serdar Kakız | Psikoloji · Manevi · Aile ve Çocuk Danışmanı</title>
+<title>Serdar Kakız | Psikoloji Aile Danışmanı</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -144,6 +144,17 @@ body.yazar #page-home{display:none}body.yazar #page-yazar{display:block}
 body.tanim #page-home{display:none}body.tanim #page-tanim{display:block}
 #page-aile{display:none}
 body.aile #page-home{display:none}body.aile #page-aile{display:block}
+.kh{background:var(--card);padding:48px 24px}
+.kh .in{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:minmax(200px,300px) 1fr;gap:52px;align-items:center}
+.kh img{width:100%;height:auto;display:block;border-radius:10px;box-shadow:0 18px 40px rgba(0,0,0,.3)}
+.kh .dur{display:block;font-size:12px;letter-spacing:.14em;color:var(--muted);margin:2px 0 4px}
+.kh .ozet{font-family:var(--serif);font-style:italic;font-size:23px;color:var(--gold2);margin:0 0 12px}
+.kh p{color:var(--muted);margin:0 0 18px}
+@media(max-width:760px){.kh .in{grid-template-columns:1fr;gap:26px}.kh img{max-width:260px;margin:0 auto}}
+.alinti{margin:0;flex:1 1 0;min-width:260px;max-width:520px;text-align:center;color:#fff;background:rgba(29,42,13,.38);border-radius:16px;padding:22px 26px;-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);text-shadow:0 1px 6px rgba(0,0,0,.35)}
+.alinti p{margin:0 0 12px;font-family:var(--serif);font-size:20px;line-height:1.45;font-style:italic}
+.alinti strong{display:block;font-family:var(--serif);font-style:normal;font-weight:700;font-size:34px;letter-spacing:.18em;color:var(--gold)}
+@media(max-width:900px){.hero .wrap{flex-direction:column;align-items:flex-start}.alinti{max-width:100%;width:100%;min-width:0;padding:18px 20px}.alinti p{font-size:17px}.alinti strong{font-size:26px}}
 /* footer */
 footer{background:var(--plum);color:#fff;border-top:1px solid var(--gold2);padding:22px 0 14px;font-size:13px}
 .ft{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
@@ -204,7 +215,7 @@ body.about #page-home{display:none}body.about #page-hakkimda{display:block}
 </head>
 <body>
 <button id="tema" type="button" onclick="temaDegistir()" aria-label="Tema değiştir"><svg class="i moon" viewBox="0 0 24 24"><path d="M21 13.5A8.5 8.5 0 1 1 10.5 3a7 7 0 0 0 10.5 10.5z"/></svg><svg class="i sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
-<div id="acilis" aria-hidden="true"><div class="in"><div class="mono">SK</div><b>SERDAR KAKIZ</b><small>PSİKOLOJİ | MANEVİ | AİLE VE ÇOCUK DANIŞMANI</small></div></div>
+<div id="acilis" aria-hidden="true"><div class="in"><div class="mono">SK</div><b>SERDAR KAKIZ</b><small>PSİKOLOJİ AİLE DANIŞMANI</small></div></div>
 <div id="rmodal" class="rm" hidden role="dialog" aria-modal="true" aria-labelledby="rbaslik">
  <div class="rbox">
   <button type="button" class="rx" id="rkapat" aria-label="Kapat">×</button>
@@ -234,7 +245,7 @@ body.about #page-home{display:none}body.about #page-hakkimda{display:block}
 
 <header>
 <div class="hd">
- <a class="logo" href="#anasayfa"><span class="mono">SK</span><span class="brand"><b>SERDAR KAKIZ</b><small>PSİKOLOJİ | MANEVİ | AİLE VE ÇOCUK DANIŞMANI</small></span></a>
+ <a class="logo" href="#anasayfa"><span class="mono">SK</span><span class="brand"><b>SERDAR KAKIZ</b><small>PSİKOLOJİ AİLE DANIŞMANI</small></span></a>
  <nav id="nav">
   <a href="#anasayfa" data-v="anasayfa">Ana Sayfa</a>
   <a href="#hakkimda" data-v="hakkimda">Hakkımda</a>
@@ -253,6 +264,7 @@ body.about #page-home{display:none}body.about #page-hakkimda{display:block}
   <p class="s">Aile ilişkilerinde sağlıklı iletişim, güçlü bireyler ve mutlu yarınlar için yanınızdayım.</p>
   <a class="btn" href="#hizmetler">Hizmetlerimi Keşfedin <svg class="i"><use href="#ar"/></svg></a>
  </div>
+ <blockquote class="alinti"><p>En büyük engel engelli olman değil, zihninde engellerinin olmasıdır; başaramayacağına olan inançtır.</p><p>İnanç, tüm benliğimizle başaracağımıza olan güvenimizdir. Seni hedefine taşıyacak ilk sıçrama noktandır, yani</p><strong>İNANÇLARIN</strong></blockquote>
  <div class="script">Her aile<br>kendi hikayesini<br>yazabilir...</div>
 </div></section>
 
@@ -277,6 +289,18 @@ body.about #page-home{display:none}body.about #page-hakkimda{display:block}
  </div>
 </section>
 
+<section class="kh" id="kitabim"><div class="in">
+ <img id="kitapana" alt="Hayat Yaşadıkça Güzel kitabının kapağı" width="720" height="1020">
+ <div>
+  <div class="lbl">YAZARIN KİTABI</div>
+  <h2 style="margin-bottom:4px">Hayat Yaşadıkça Güzel</h2>
+  <span class="dur">CİLT 1 · YAZIM AŞAMASINDA</span>
+  <p class="ozet">“Sessizlikte hakikat konuşur.”</p>
+  <p>Serdar Kakız’ın yazım aşamasındaki kitabı. Kapakta altın yaldızlı bir çerçeve, hilal, kanat çırpan bir kuş ve dönen bir semazen figürü yer alıyor. Kitabın konusu ve çıkış tarihi gibi ayrıntılar hazır olduğunda burada paylaşılacak.</p>
+  <a class="btn" href="#yazar">Kitabı Keşfet <svg class="i"><use href="#ar"/></svg></a>
+ </div>
+</div></section>
+
 <section class="wrap blog" id="blog">
  <div class="bh"><div><div class="lbl">BLOG</div><h2>Son Yazılarım</h2></div></div>
  <div class="grid">
@@ -296,16 +320,16 @@ body.about #page-home{display:none}body.about #page-hakkimda{display:block}
  </div>
 </div></section>
 <section class="ms" id="mesaj">
- <div class="lbl">İLETİŞİM</div><h2>Sorununuzu anlatın</h2>
- <p>Yaşadığınız sorunu seçin, adınız ve soyadınız ile birlikte kısaca anlatın. “Gönder” butonuna basın ve bizimle iletişime geçin!</p>
+ <div class="lbl">İLETİŞİM</div><h2>Size nasıl destek olabiliriz?</h2>
+ <p>Sizi dinlemek için buradayız. Size uygun konuyu seçin, dilerseniz yaşadıklarınızı kendi cümlelerinizle paylaşın. İstediğiniz kadarını yazmanız yeterli. Hazır olduğunuzda “Gönder”e dokunun; mesajınız WhatsApp’ta hazır gelir.</p>
  
  <div class="kart">
-  <label for="mad">AD SOYAD</label>
+  <label for="mad">SİZE NASIL HİTAP EDELİM?</label>
   <input id="mad" type="text" placeholder="Adınız ve soyadınız" autocomplete="name" maxlength="80">
-  <label for="mtur">SORUN TÜRÜ</label>
-  <select id="mtur"><option>Aile içi iletişim sorunları</option><option>Eşler arası ilişki sorunları</option><option>Çocuk ve ergenle ilgili sorunlar</option><option>Stres, kaygı ve duygusal zorlanmalar</option><option>Özgüven ve kişisel gelişim</option><option>Hedef belirleme ve yaşam koçluğu</option><option>Diğer</option></select>
-  <label for="mmetin">SORUNUNUZU ANLATIN</label>
-  <textarea id="mmetin" maxlength="1000" placeholder="Yaşadığınız sorunu kısaca anlatın."></textarea>
+  <label for="mtur">NE KONUDA DESTEK ARIYORSUNUZ?</label>
+  <select id="mtur"><option>Aile içindeki iletişim</option><option>Eşimle olan ilişkim</option><option>Çocuğum ya da ergenimle ilgili endişelerim</option><option>Stres, kaygı ve duygusal yorgunluk</option><option>Kendimi tanımak ve gelişmek istiyorum</option><option>Hedeflerim ve hayatıma yön vermek</option><option>Henüz emin değilim, konuşmak istiyorum</option></select>
+  <label for="mmetin">DİLERSENİZ PAYLAŞIN</label>
+  <textarea id="mmetin" maxlength="1000" placeholder="İstediğiniz kadarını yazabilirsiniz. Neler yaşadığınızı ya da nasıl bir destek aradığınızı paylaşabilirsiniz."></textarea>
   <div id="mhata" role="alert"></div>
   <div class="bt">
    <button type="button" class="btn" id="mwa"><svg class="i"><use href="#msg"/></svg>Gönder</button>
@@ -433,14 +457,14 @@ body.about #page-home{display:none}body.about #page-hakkimda{display:block}
    </dl>
    <p>Altın yaldızlı bir çerçevenin içinde, koyu mor ebru desenli bir kapak. Hilal, kanat çırpan bir kuş ve dönen bir semazen figürü, kitabın sakin ve manevi ruhunu yansıtıyor. Kapağın alt kısmında “Sessizlikte hakikat konuşur.” cümlesi yer alıyor.</p>
    <p>Kitabın konusu, sayfa sayısı ve çıkış tarihi gibi ayrıntılar hazır olduğunda burada yayınlanacak.</p>
-   <div class="ct"><a class="btn" href="https://wa.me/905443913120?text=Merhaba%2C%20%C2%ABHayat%20Ya%C5%9Fad%C4%B1k%C3%A7a%20G%C3%BCzel%C2%BB%20kitab%C4%B1%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener"><svg class="i"><use href="#msg"/></svg>Kitap hakkında yazın</a></div>
+   <div class="ct"><a class="btn js-randevu" href="#mesaj" data-on="Hayat Yaşadıkça Güzel kitabı hakkında: "><svg class="i"><use href="#msg"/></svg>Kitap hakkında yazın</a></div>
   </div>
  </div>
 </div></main>
 
 <footer id="iletisim"><div class="wrap">
  <div class="ft">
-  <a class="logo" href="#anasayfa"><span class="mono" style="width:46px;height:46px;font-size:32px">SK</span><span class="brand"><b style="font-size:20px">SERDAR KAKIZ</b><small>PSİKOLOJİ | MANEVİ | AİLE VE ÇOCUK DANIŞMANI</small></span></a>
+  <a class="logo" href="#anasayfa"><span class="mono" style="width:46px;height:46px;font-size:32px">SK</span><span class="brand"><b style="font-size:20px">SERDAR KAKIZ</b><small>PSİKOLOJİ AİLE DANIŞMANI</small></span></a>
   
   <div class="soc fs"><span class="fl">İletişim:</span>
    <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><svg class="i"><use href="#ig"/></svg></a>
@@ -477,8 +501,8 @@ body.about #page-home{display:none}body.about #page-hakkimda{display:block}
 (function(){
  var d=document.documentElement,i;
  if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches)return;
- var hero=document.querySelectorAll(".hero .wrap > div:first-child");
- var others=document.querySelectorAll(".svc a,.ab .ph,.ab .abt,.blog .bh,.post,.tst .wrap > div:first-child,.q");
+ var hero=document.querySelectorAll(".hero .wrap > div:first-child,.hero .wrap > .alinti");
+ var others=document.querySelectorAll(".svc a,.ab .ph,.ab .abt,.blog .bh,.post,.tst .wrap > div:first-child,.q,.kh img,.kh .in>div");
  for(i=0;i<hero.length;i++){hero[i].classList.add("rv");}
  for(i=0;i<others.length;i++){others[i].classList.add("rv");others[i].style.transitionDelay=((i%6)*0.1)+"s";}
  setTimeout(function(){for(var k=0;k<hero.length;k++){hero[k].classList.add("go");}},d.classList.contains("ns")?150:2500);
@@ -493,7 +517,7 @@ body.about #page-home{display:none}body.about #page-hakkimda{display:block}
  if(!m||!b)return;
  function ac(){m.hidden=false;document.body.style.overflow="hidden";h.textContent="";setTimeout(function(){t.focus();},60);}
  function kapat(){m.hidden=true;document.body.style.overflow="";}
- var bs=document.querySelectorAll("#nav a.btn,.js-randevu");for(var i=0;i<bs.length;i++){bs[i].addEventListener("click",function(e){e.preventDefault();ac();});}
+ var bs=document.querySelectorAll("#nav a.btn,.js-randevu");for(var i=0;i<bs.length;i++){bs[i].addEventListener("click",function(e){e.preventDefault();var o=this.getAttribute("data-on");if(o&&!t.value.trim()){t.value=o;}ac();});}
  document.getElementById("rkapat").addEventListener("click",kapat);
  m.addEventListener("click",function(e){if(e.target===m){kapat();}});
  document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!m.hidden){kapat();}});
@@ -514,12 +538,12 @@ body.about #page-home{display:none}body.about #page-hakkimda{display:block}
  if(!hata)return;
  function veri(){
   var ad=document.getElementById("mad").value.trim(),tur=document.getElementById("mtur").value,msj=document.getElementById("mmetin").value.trim();
-  if(!ad||!msj){hata.textContent="Lütfen adınızı yazın ve sorununuzu anlatın.";return null;}
+  if(!ad){hata.textContent="Adınızı yazar mısınız?";return null;}
   hata.textContent="";return {ad:ad,tur:tur,msj:msj};
  }
  document.getElementById("mwa").addEventListener("click",function(){
   var v=veri();if(!v)return;
-  var t="Ad Soyad: "+v.ad+"\n\nSorun türü: "+v.tur+"\n\nSorunum:\n"+v.msj;
+  var t="Ad Soyad: "+v.ad+"\n\nDestek almak istediğim konu: "+v.tur+(v.msj?"\n\nPaylaşmak istediklerim:\n"+v.msj:"");
   var a=document.createElement("a");
   a.href="https://wa.me/905443913120?text="+encodeURIComponent(t);
   a.target="_blank";a.rel="noopener";
@@ -527,5 +551,6 @@ body.about #page-home{display:none}body.about #page-hakkimda{display:block}
  });
 })();
 </script>
+<script>(function(){var s=document.querySelector("#page-yazar .kt img"),d=document.getElementById("kitapana");if(s&&d){d.src=s.src;}})();</script>
 </body>
 </html>
