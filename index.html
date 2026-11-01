@@ -229,11 +229,11 @@ body.urun #page-home{display:none}body.urun #page-urun{display:block}
 .ud .fy{display:block;font-size:28px;margin:6px 0 14px}
 @media(max-width:760px){.ud{grid-template-columns:1fr;gap:26px}.ud .uk{max-width:300px;width:100%;margin:0 auto}}
 /* küçük kütüphane butonu */
-#kbtn{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;display:inline-flex;align-items:center;gap:7px;height:46px;padding:0 18px 0 14px;border-radius:30px;background:var(--gold);color:var(--deep);font-weight:600;font-size:14px;box-shadow:0 6px 18px rgba(0,0,0,.35);animation:nabiz 2.2s ease 3.6s 3}
+#kbtn{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;display:inline-flex;align-items:center;gap:7px;height:46px;padding:0 18px 0 14px;border-radius:30px;background:var(--gold);color:var(--deep);font-weight:600;font-size:14px;box-shadow:0 6px 18px rgba(0,0,0,.35);animation:nabiz 1.8s ease-in-out 1.5s infinite}
 #kbtn:hover{background:#f3d996}
 #kbtn svg{width:20px;height:20px}
 body.kutuphane #kbtn,body.urun #kbtn{display:none}
-@keyframes nabiz{0%{box-shadow:0 6px 18px rgba(0,0,0,.35),0 0 0 0 rgba(238,210,145,.65)}70%,100%{box-shadow:0 6px 18px rgba(0,0,0,.35),0 0 0 16px rgba(238,210,145,0)}}
+@keyframes nabiz{0%{box-shadow:0 6px 18px rgba(0,0,0,.35),0 0 0 0 rgba(238,210,145,.75),0 0 10px 2px rgba(238,210,145,.55)}70%{box-shadow:0 6px 18px rgba(0,0,0,.35),0 0 0 18px rgba(238,210,145,0),0 0 22px 6px rgba(238,210,145,.15)}100%{box-shadow:0 6px 18px rgba(0,0,0,.35),0 0 0 18px rgba(238,210,145,0),0 0 10px 2px rgba(238,210,145,.55)}}
 @media (prefers-reduced-motion:reduce){#kbtn{animation:none}}
 /* kütüphane açılış animasyonu */
 #kapi{position:fixed;inset:0;z-index:150;pointer-events:none;visibility:hidden;transition:visibility 0s linear .65s}
@@ -297,6 +297,54 @@ body.duygusal #page-duygusal,body.manevi #page-manevi,body.kocluk #page-kocluk{d
 .kay p{margin:0 0 8px}
 .kay ul{margin:6px 0 0}
 @media(max-width:560px){.sh{gap:14px}.sh .ic{width:56px;height:56px}.sh .ic svg{width:26px;height:26px}.sh h2{font-size:30px}}
+</style>
+<style>
+/* ===== ek hareketler (yalnızca ekleme; mevcut kurallara dokunmaz) ===== */
+@media (prefers-reduced-motion:no-preference){
+ /* dokunma geri bildirimi */
+ .btn,.kk .sb{transition:transform .15s ease,background .2s ease}
+ .btn:active,.kk .sb:active{transform:scale(.96)}
+ /* sayfa geçişlerinde yumuşak belirme */
+ main[id^="page-"]{animation:an-sayfa .5s ease backwards}
+ @keyframes an-sayfa{from{opacity:0}}
+ /* hero ana buton: altın nabız + ok hareketi */
+ .hero .btn{animation:an-nabiz 2.6s ease-in-out 3.2s infinite}
+ .hero .btn svg,.abt .btn.out svg{animation:an-ok 1.6s ease-in-out 3.2s infinite}
+ @keyframes an-nabiz{0%{box-shadow:0 0 0 0 rgba(238,210,145,.7),0 0 10px 2px rgba(238,210,145,.45)}70%,100%{box-shadow:0 0 0 16px rgba(238,210,145,0),0 0 10px 2px rgba(238,210,145,.2)}}
+ @keyframes an-ok{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
+ /* üst menü Randevu Al: ışık parıltısı */
+ header #nav a.btn{position:relative;overflow:hidden}
+ header #nav a.btn::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.65),transparent);transform:skewX(-20deg);animation:an-parilti 4s ease-in-out 3s infinite;pointer-events:none}
+ @keyframes an-parilti{0%{left:-60%}35%,100%{left:130%}}
+ /* logo halkası: yumuşak nefes */
+ header .mono{animation:an-halka 3.4s ease-in-out 3s infinite}
+ @keyframes an-halka{0%,100%{box-shadow:0 0 0 0 rgba(238,210,145,0)}50%{box-shadow:0 0 0 4px rgba(238,210,145,.18),0 0 10px rgba(238,210,145,.25)}}
+ /* hizmet ikonları: sırayla nefes alma + dokunma büyütmesi */
+ .svc .ic{transition:transform .25s ease,background .25s ease,color .25s ease;animation:an-nefes 3.6s ease-in-out infinite}
+ .svc a:nth-child(2) .ic{animation-delay:.5s}.svc a:nth-child(3) .ic{animation-delay:1s}
+ .svc a:nth-child(4) .ic{animation-delay:1.5s}.svc a:nth-child(5) .ic{animation-delay:2s}.svc a:nth-child(6) .ic{animation-delay:2.5s}
+ .svc a:hover .ic,.svc a:active .ic{transform:scale(1.1)}
+ @keyframes an-nefes{0%,100%{box-shadow:0 0 0 0 rgba(168,132,47,0)}50%{box-shadow:0 0 0 7px rgba(168,132,47,.16)}}
+ /* "Güçlenelim." altın parıltı */
+ @supports ((-webkit-background-clip:text) or (background-clip:text)){
+  .hero h1 em{background:linear-gradient(100deg,#eed291 0%,#eed291 40%,#fff6d8 50%,#eed291 60%,#eed291 100%);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:an-isilti 5s ease-in-out 3.2s infinite}
+ }
+ @keyframes an-isilti{0%{background-position:100% 0}60%,100%{background-position:0% 0}}
+ /* "Her aile kendi hikayesini..." yazısı: hafif süzülme (masaüstü) */
+ .script{animation:an-yuz 5s ease-in-out infinite}
+ @keyframes an-yuz{0%,100%{transform:rotate(-8deg) translateY(0)}50%{transform:rotate(-8deg) translateY(-8px)}}
+ /* yorum yıldızları: sırayla parıldama */
+ .q em{animation:an-yildiz 3s ease-in-out infinite}
+ .q:nth-child(2) em{animation-delay:1s}.q:nth-child(3) em{animation-delay:2s}
+ @keyframes an-yildiz{0%,100%{text-shadow:0 0 0 rgba(238,210,145,0);opacity:.85}50%{text-shadow:0 0 10px rgba(238,210,145,.9);opacity:1}}
+ /* kütüphane kartları ve kitap listesi: sırayla yükselerek gelme */
+ .kk,.bk{animation:an-gir .6s ease backwards}
+ .kk:nth-child(3n+2),.bk:nth-child(2n){animation-delay:.1s}.kk:nth-child(3n){animation-delay:.2s}
+ @keyframes an-gir{from{opacity:0;transform:translateY(18px)}}
+ /* satın alma / mesaj gönderme butonları: açık zemin için altın nabız */
+ #page-urun .btn:not(.out),body:not(.wa-kilit) #mwa{animation:an-nabiz-a 2.4s ease-in-out 1s infinite}
+ @keyframes an-nabiz-a{0%{box-shadow:0 0 0 0 rgba(168,132,47,.55)}70%,100%{box-shadow:0 0 0 14px rgba(168,132,47,0)}}
+}
 </style>
 </head>
 <body>
