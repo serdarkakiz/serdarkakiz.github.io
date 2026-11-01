@@ -650,16 +650,17 @@ body.kutuphane #kbtn,body.urun #kbtn{display:none}
     (resim yazılmazsa otomatik kapak çizilir). WhatsApp mesajı ad ve fiyattan kendiliğinden oluşur. */
  var NUMARA="905443913120";
  var KITAPLAR=[
-  {ad:"Evin Işığı",tur:"Aile",fiyat:129.90,aciklama:"Bir evi ev yapan şeyin duvarlar değil, içindeki sıcaklık olduğunu hatırlatan bir kitap. Aile içinde güveni, paylaşımı ve birlikte geçirilen zamanın küçük ritüellerini anlatır."},
-  {ad:"Kalbin Pusulası",tur:"Kişisel Gelişim",fiyat:149.00,aciklama:"Karar anlarında içsel sesinizi dinlemeyi ve kendi değerlerinize göre yön bulmayı anlatan bir rehber. Her bölüm, uygulayabileceğiniz kısa alıştırmalarla sona erer."},
-  {ad:"Dinlemenin Sanatı",tur:"İletişim",fiyat:99.50,aciklama:"Gerçekten dinlemek, konuşmaktan daha zordur. Bu kitap; aile ve ilişkilerde yargılamadan dinlemenin, doğru soru sormanın ve anlaşılmanın yollarını örneklerle gösterir."},
-  {ad:"Sabır Bahçesi",tur:"Manevi",fiyat:179.90,aciklama:"Sabrı beklemek olarak değil, tohum atıp emek vermek olarak ele alan şiirsel bir okuma. Telaşlı günlerde yavaşlamak ve iç huzuru büyütmek isteyenler için."},
-  {ad:"Bir Çay Daha",tur:"Roman",fiyat:119.00,aciklama:"Bir sofra, bir demlik çay ve birbirine uzanan üç kuşak. Sıcak, samimi ve yer yer hüzünlü bir aile romanı."},
-  {ad:"Yarının Aileleri",tur:"Aile",fiyat:159.90,aciklama:"Değişen dünyada ailenin yerini, çocuk yetiştirmeyi ve nesiller arası iletişimi ele alan bir kitap. Ebeveynler için uygulanabilir önerilerle dolu."},
-  {ad:"İçimdeki Ses",tur:"Kişisel Gelişim",fiyat:89.90,aciklama:"Kendini eleştiren iç sesi tanımak ve onu şefkatli bir sese dönüştürmek isteyenler için hazırlandı. Kısa bölümleri, her gün birkaç sayfa okumaya uygundur."},
-  {ad:"Mevsimler ve Sofralar",tur:"Deneme",fiyat:139.00,aciklama:"Mevsimlerin değişimini, sofradaki sohbetleri ve hayatın küçük anlarını anlatan denemeler derlemesi. Yavaşlamayı ve anın tadını çıkarmayı hatırlatır."},
-  {ad:"Küçük Adımlar",tur:"Yaşam Koçluğu",fiyat:169.50,aciklama:"Büyük değişimlerin küçük ve tutarlı adımlarla başladığını anlatan bir yaşam koçluğu kitabı. Hedef belirlemeyi ve alışkanlık kurmayı adım adım ele alır."},
-  {ad:"Gönülden Gönüle",tur:"Manevi",fiyat:109.90,aciklama:"Kalpten söylenen sözün kalbe ulaştığını hatırlatan manevi bir okuma. Sevgi, af ve bağışlama üzerine kısa metinler içerir."}
+  {ad:"Hayat Yaşadıkça Güzel",tur:"Yazarın Kitabı",fiyat:299.90,aciklama:"“Sessizlikte hakikat konuşur.” Hayat Yaşadıkça Güzel, insanın kendini, hayatı ve hakikati anlama yolculuğunu anlatan derinlikli bir eserdir. Tasavvufun kadim bilgeliğini, modern insanın arayışlarıyla buluşturan kitap; kalbin, ruhun ve insan olmanın sırlarına dair düşündürücü bir rehber niteliği taşır.",kapakyazar:true},
+  {ad:"Evin Işığı",stil:0,tur:"Aile",fiyat:129.90,aciklama:"Bir evi ev yapan şeyin duvarlar değil, içindeki sıcaklık olduğunu hatırlatan bir kitap. Aile içinde güveni, paylaşımı ve birlikte geçirilen zamanın küçük ritüellerini anlatır."},
+  {ad:"Kalbin Pusulası",stil:1,tur:"Kişisel Gelişim",fiyat:149.00,aciklama:"Karar anlarında içsel sesinizi dinlemeyi ve kendi değerlerinize göre yön bulmayı anlatan bir rehber. Her bölüm, uygulayabileceğiniz kısa alıştırmalarla sona erer."},
+  {ad:"Dinlemenin Sanatı",stil:2,tur:"İletişim",fiyat:99.50,aciklama:"Gerçekten dinlemek, konuşmaktan daha zordur. Bu kitap; aile ve ilişkilerde yargılamadan dinlemenin, doğru soru sormanın ve anlaşılmanın yollarını örneklerle gösterir."},
+  {ad:"Sabır Bahçesi",stil:3,tur:"Manevi",fiyat:179.90,aciklama:"Sabrı beklemek olarak değil, tohum atıp emek vermek olarak ele alan şiirsel bir okuma. Telaşlı günlerde yavaşlamak ve iç huzuru büyütmek isteyenler için."},
+  {ad:"Bir Çay Daha",stil:4,tur:"Roman",fiyat:119.00,aciklama:"Bir sofra, bir demlik çay ve birbirine uzanan üç kuşak. Sıcak, samimi ve yer yer hüzünlü bir aile romanı."},
+  {ad:"Yarının Aileleri",stil:5,tur:"Aile",fiyat:159.90,aciklama:"Değişen dünyada ailenin yerini, çocuk yetiştirmeyi ve nesiller arası iletişimi ele alan bir kitap. Ebeveynler için uygulanabilir önerilerle dolu."},
+  {ad:"İçimdeki Ses",stil:6,tur:"Kişisel Gelişim",fiyat:89.90,aciklama:"Kendini eleştiren iç sesi tanımak ve onu şefkatli bir sese dönüştürmek isteyenler için hazırlandı. Kısa bölümleri, her gün birkaç sayfa okumaya uygundur."},
+  {ad:"Mevsimler ve Sofralar",stil:7,tur:"Deneme",fiyat:139.00,aciklama:"Mevsimlerin değişimini, sofradaki sohbetleri ve hayatın küçük anlarını anlatan denemeler derlemesi. Yavaşlamayı ve anın tadını çıkarmayı hatırlatır."},
+  {ad:"Küçük Adımlar",stil:8,tur:"Yaşam Koçluğu",fiyat:169.50,aciklama:"Büyük değişimlerin küçük ve tutarlı adımlarla başladığını anlatan bir yaşam koçluğu kitabı. Hedef belirlemeyi ve alışkanlık kurmayı adım adım ele alır."},
+  {ad:"Gönülden Gönüle",stil:9,tur:"Manevi",fiyat:109.90,aciklama:"Kalpten söylenen sözün kalbe ulaştığını hatırlatan manevi bir okuma. Sevgi, af ve bağışlama üzerine kısa metinler içerir."}
  ];
  var RENK=[["#4c6a28","#1d2a0d"],["#a8842f","#4a3510"],["#2b4a5c","#0f1f2b"],["#7a3b4a","#2e1219"],["#6f8f48","#2f4519"],["#3d3a6b","#15132e"],["#b5651d","#4a2208"],["#1f6b64","#0a2b28"],["#5c4a2e","#221a0e"],["#8c3b3b","#2b1010"]];
  var G="#eed291";
@@ -675,18 +676,20 @@ body.kutuphane #kbtn,body.urun #kbtn{display:none}
   '<path d="M85 370V350h40v-30h40v-30h40v-30h25v110Z" fill="'+G+'"/><path d="M200 236l10-22 10 22Z" fill="#fff" fill-opacity=".85"/>',
   '<path d="M150 350C90 305 85 255 118 245c20-6 32 6 32 22 0-16 12-28 32-22 33 10 28 60-32 105Z" fill="'+G+'"/><circle cx="212" cy="236" r="6" fill="#fff" fill-opacity=".8"/><circle cx="92" cy="268" r="4" fill="#fff" fill-opacity=".6"/>'
  ];
+ var ky=document.querySelector("#page-yazar .kt img");
+ if(ky&&ky.getAttribute("src")){for(var z=0;z<KITAPLAR.length;z++){if(KITAPLAR[z].kapakyazar){KITAPLAR[z].resim=ky.getAttribute("src");}}}
  function esc(t){return String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
  function fmt(n){return n.toFixed(2).replace(".",",")+" ₺";}
  function sar(t,m){var w=t.split(" "),s=[],c="";for(var i=0;i<w.length;i++){if(c&&(c+" "+w[i]).length>m){s.push(c);c=w[i];}else{c=c?c+" "+w[i]:w[i];}}if(c)s.push(c);return s;}
  function kapak(k,i,o){
-  var q=(o||"k")+i,c=RENK[i%RENK.length],L=sar(k.ad,11),mx=0,j,fs;
+  var q=(o||"k")+i,d=k.stil!=null?k.stil:i,c=RENK[d%RENK.length],L=sar(k.ad,11),mx=0,j,fs;
   for(j=0;j<L.length;j++){if(L[j].length>mx)mx=L[j].length;}
   fs=mx<=9?38:32;
   var t="";
   for(j=0;j<L.length;j++){t+='<text x="150" y="'+Math.round(112+j*fs*1.15)+'" text-anchor="middle" font-family="Cormorant Garamond,Georgia,serif" font-weight="700" font-size="'+fs+'" fill="#f5f8ee">'+esc(L[j])+'</text>';}
   return '<svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="kg'+q+'" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="'+c[0]+'"/><stop offset="1" stop-color="'+c[1]+'"/></linearGradient><clipPath id="kc'+q+'"><rect x="26" y="26" width="248" height="348"/></clipPath></defs>'
    +'<rect width="300" height="400" fill="url(#kg'+q+')"/>'
-   +'<g clip-path="url(#kc'+q+')">'+MOTIF[i%MOTIF.length]+'</g>'
+   +'<g clip-path="url(#kc'+q+')">'+MOTIF[d%MOTIF.length]+'</g>'
    +'<rect x="26" y="26" width="248" height="348" fill="none" stroke="'+G+'" stroke-opacity=".5" stroke-width="1.5"/>'
    +'<text x="150" y="62" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="11" letter-spacing="3" fill="'+G+'">'+esc(k.tur.toLocaleUpperCase("tr"))+'</text>'
    +t+'<rect width="16" height="400" fill="#000" fill-opacity=".22"/><rect x="16" width="3" height="400" fill="#fff" fill-opacity=".12"/></svg>';
