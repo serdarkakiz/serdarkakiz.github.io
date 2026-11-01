@@ -362,7 +362,7 @@ body.duygusal #page-duygusal,body.manevi #page-manevi,body.kocluk #page-kocluk{d
  <a href="#yasam-kocullugu"><div class="ic"><svg class="i"><use href="#cmp"/></svg></div><b>Yaşam Koçluğu</b><span>Hedeflerine giden<br>yolda destek</span></a>
  <a href="#hizmetler"><div class="ic"><svg class="i"><use href="#bk"/></svg></div><b>Eğitim &amp; Seminer</b><span>Bilgiyle güçlen,<br>geleceğini şekillendir</span></a>
  <a href="#yazar"><div class="ic"><svg class="i"><use href="#pen"/></svg></div><b>Yazar</b><span>Düşün, hisset,<br>yaz...</span></a>
- <a class="js-randevu" href="https://wa.me/905443913120?text=Merhaba%20siteniz%20%C3%BCzerinden%20size%20ula%C5%9F%C4%B1yorum" target="_blank" rel="noopener"><div class="ic"><svg class="i"><use href="#hrt"/></svg></div><b>Online Randevu</b><span>Size uygun<br>zamanı seçin</span></a>
+ <a class="js-randevu" data-on="Online randevu almak istiyorum: " href="https://wa.me/905443913120?text=Merhaba%20siteniz%20%C3%BCzerinden%20size%20ula%C5%9F%C4%B1yorum" target="_blank" rel="noopener"><div class="ic"><svg class="i"><use href="#hrt"/></svg></div><b>Online Randevu</b><span>Size uygun<br>zamanı seçin</span></a>
 </section>
 
 <section class="ab">
@@ -526,7 +526,7 @@ body.duygusal #page-duygusal,body.manevi #page-manevi,body.kocluk #page-kocluk{d
  </ol>
  <p style="max-width:640px;margin-top:24px">Bu yöntemler her ailede aynı şekilde işlemeyebilir. Aile içi iletişimde takıldığınız bir konu varsa birlikte çalışabiliriz.</p>
  <div class="ct">
-  <a class="btn js-randevu" href="#mesaj"><svg class="i"><use href="#msg"/></svg>Bize yazın</a>
+  <a class="btn js-randevu" href="#mesaj" data-on="Aile içi iletişim konusunda destek almak istiyorum: "><svg class="i"><use href="#msg"/></svg>Bize yazın</a>
   <a class="btn out" href="#blog">← Blog’a Dön</a>
  </div>
 </div></main>
@@ -772,7 +772,11 @@ body.duygusal #page-duygusal,body.manevi #page-manevi,body.kocluk #page-kocluk{d
  if(!m||!b)return;
  function ac(){m.hidden=false;document.body.style.overflow="hidden";h.textContent="";setTimeout(function(){t.focus();},60);}
  function kapat(){m.hidden=true;document.body.style.overflow="";}
- var bs=document.querySelectorAll("#nav a.btn,.js-randevu");for(var i=0;i<bs.length;i++){bs[i].addEventListener("click",function(e){e.preventDefault();var o=this.getAttribute("data-on");if(o&&(!t.value.trim()||t.value===window.__sonOn)){t.value=o;window.__sonOn=o;}ac();});}
+ var SM={"aile-iletisimi":"Aile içi iletişim konusunda destek almak istiyorum: ","kendini-tanimak":"Kendini tanımak konusunda destek almak istiyorum: ","duygusal-zeka":"Duygusal zeka ve ilişkiler konusunda destek almak istiyorum: ","manevi-danismanlik":"Manevi danışmanlık hakkında görüşmek istiyorum: ","yasam-kocullugu":"Yaşam koçluğu hakkında görüşmek istiyorum: ","aile-danismanligi":"Aile danışmanlığı için randevu almak istiyorum: ","yazar":"Hayat Yaşadıkça Güzel kitabı hakkında: ","hakkimda":"Sizinle tanışmak ve görüşmek istiyorum: ","kitap-onerileri":"Kitap önerileri hakkında yazmak istiyorum: ","kutuphane":"Kütüphanedeki kitaplar hakkında yazmak istiyorum: "};
+  function navMsg(){var h=(location.hash||"").slice(1);if(/^urun-\d+$/.test(h)){var e=document.querySelector("#urunic h2");return e?"\u201c"+e.textContent+"\u201d kitabı hakkında: ":"";}return SM[h]||"";}
+  function bilinen(v){for(var x in SM){if(SM[x]===v)return true;}if(/^\u201c[^\u201d]*\u201d kitabı hakkında: $/.test(v))return true;var l=document.querySelectorAll(".js-randevu[data-on]");for(var j=0;j<l.length;j++){if(l[j].getAttribute("data-on")===v)return true;}return false;}
+  document.addEventListener("click",function(e){var a=e.target&&e.target.closest?e.target.closest('.soc a[aria-label="WhatsApp"]'):null;if(!a)return;var ms=document.querySelectorAll("main"),b=null;for(var i=0;i<ms.length;i++){if(ms[i].offsetParent!==null){b=ms[i];break;}}var hh=(location.hash||"").slice(1);if(!b||b.id==="page-home"||!hh||hh==="anasayfa"){a.href="https://wa.me/905443913120?text=Merhaba%20sitenizden%20size%20ula%C5%9F%C4%B1yorum";return;}var h2=b.querySelector("h2")||b.querySelector("h1"),bs=h2?h2.textContent.trim():"";a.href="https://wa.me/905443913120?text="+encodeURIComponent(bs?"Merhaba, sitenizdeki \u201c"+bs+"\u201d sayfasından size ulaşıyorum.":"Merhaba sitenizden size ulaşıyorum");},true);
+  var bs=document.querySelectorAll("#nav a.btn,.js-randevu");for(var i=0;i<bs.length;i++){bs[i].addEventListener("click",function(e){e.preventDefault();var o=this.getAttribute("data-on")||"";if(this.matches("#nav a.btn")){o=navMsg();}var v=t.value;if(!v.trim()||bilinen(v)){t.value=o;}ac();});}
  document.getElementById("rkapat").addEventListener("click",kapat);
  m.addEventListener("click",function(e){if(e.target===m){kapat();}});
  document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!m.hidden){kapat();}});
