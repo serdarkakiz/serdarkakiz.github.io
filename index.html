@@ -772,7 +772,7 @@ body.duygusal #page-duygusal,body.manevi #page-manevi,body.kocluk #page-kocluk{d
  if(!m||!b)return;
  function ac(){m.hidden=false;document.body.style.overflow="hidden";h.textContent="";setTimeout(function(){t.focus();},60);}
  function kapat(){m.hidden=true;document.body.style.overflow="";}
- var bs=document.querySelectorAll("#nav a.btn,.js-randevu");for(var i=0;i<bs.length;i++){bs[i].addEventListener("click",function(e){e.preventDefault();var o=this.getAttribute("data-on");if(o&&!t.value.trim()){t.value=o;}ac();});}
+ var bs=document.querySelectorAll("#nav a.btn,.js-randevu");for(var i=0;i<bs.length;i++){bs[i].addEventListener("click",function(e){e.preventDefault();var o=this.getAttribute("data-on");if(o&&(!t.value.trim()||t.value===window.__sonOn)){t.value=o;window.__sonOn=o;}ac();});}
  document.getElementById("rkapat").addEventListener("click",kapat);
  m.addEventListener("click",function(e){if(e.target===m){kapat();}});
  document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!m.hidden){kapat();}});
