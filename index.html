@@ -768,5 +768,81 @@ body.kutuphane #kbtn,body.urun #kbtn{display:none}
  olc();
 })();
 </script>
+
+<!-- ===== WhatsApp mesaj kilidi: her gün KILIT_BASLA:00 – KILIT_BITIS:00 arası (Türkiye saati) ===== -->
+<style>
+.kn{font-size:12px;color:var(--muted);opacity:.85;margin:2px 2px 0;line-height:1.4}
+.kn[hidden]{display:none}
+body.wa-kilit #rgonder,body.wa-kilit #mwa{opacity:.6}
+#kilitpenc{z-index:300}
+#kilitpenc .rbox{text-align:center;max-width:380px}
+#kilitpenc .rbox p{font-size:15px;color:var(--ink);margin:10px 0 18px;line-height:1.5}
+#kilitpenc .ki{font-size:30px;line-height:1}
+</style>
+<script>
+(function(){
+ /* Kilit saatlerini buradan değiştirebilirsiniz (0–23, Türkiye saati). Varsayılan: 00:00 – 08:00 */
+ var KILIT_BASLA=0,KILIT_BITIS=8;
+ var MESAJ="Site 08:00’a kadar kilitlidir, 08:00’dan sonra dilediğiniz gibi mesaj gönderebilirsiniz.";
+ var NOT="08:00’a kadar mesaj gönderemezsiniz.";
+ var NUMARA="905443913120";
+ function saat(){
+  try{
+   var p=new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/Istanbul",hour:"2-digit",hour12:false}).formatToParts(new Date());
+   for(var i=0;i<p.length;i++){if(p[i].type==="hour"){return parseInt(p[i].value,10)%24;}}
+  }catch(e){}
+  return new Date().getHours();
+ }
+ function kilitli(){
+  var h=saat();
+  return KILIT_BASLA<KILIT_BITIS?(h>=KILIT_BASLA&&h<KILIT_BITIS):(h>=KILIT_BASLA||h<KILIT_BITIS);
+ }
+ /* Mesaj kutularının altına küçük not */
+ var notlar=[];
+ ["rmetin","mmetin"].forEach(function(id){
+  var t=document.getElementById(id);if(!t)return;
+  var n=document.createElement("div");n.className="kn";n.textContent=NOT;n.hidden=true;
+  t.insertAdjacentElement("afterend",n);notlar.push(n);
+ });
+ /* Uyarı penceresi */
+ var pn=document.createElement("div");
+ pn.id="kilitpenc";pn.className="rm";pn.hidden=true;
+ pn.setAttribute("role","alertdialog");pn.setAttribute("aria-modal","true");pn.setAttribute("aria-labelledby","kilitmsj");
+ pn.innerHTML='<div class="rbox"><div class="ki" aria-hidden="true">🔒</div><p id="kilitmsj"></p><button type="button" class="btn" id="kilittamam">Tamam</button></div>';
+ document.body.appendChild(pn);
+ document.getElementById("kilitmsj").textContent=MESAJ;
+ var ok=document.getElementById("kilittamam");
+ function goster(){pn.hidden=false;setTimeout(function(){ok.focus();},30);}
+ function kapat(){pn.hidden=true;}
+ ok.addEventListener("click",kapat);
+ pn.addEventListener("click",function(e){if(e.target===pn)kapat();});
+ document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!pn.hidden){kapat();}});
+ /* Durumu güncelle (sayfa açıkken saat dönerse de kendiliğinden değişir) */
+ function guncelle(){
+  var k=kilitli();
+  document.body.classList.toggle("wa-kilit",k);
+  for(var i=0;i<notlar.length;i++){notlar[i].hidden=!k;}
+  if(!k&&!pn.hidden){kapat();}
+ }
+ guncelle();setInterval(guncelle,30000);
+ document.addEventListener("visibilitychange",guncelle);
+ /* WhatsApp'a giden her tıklamayı (yakalama aşamasında) kilitliyken durdur */
+ document.addEventListener("click",function(e){
+  var el=e.target&&e.target.closest?e.target:null;if(!el)return;
+  if(el.closest("#kilitpenc"))return;
+  var gonder=el.closest("#rgonder,#mwa");
+  var link=el.closest('a[href*="wa.me/"]');
+  /* Randevu penceresini açan düğmeler engellenmez; yazma serbest, gönderme kilitli */
+  if(link&&link.matches("#nav a.btn,.js-randevu"))link=null;
+  /* Tasarımcı bağlantısı (başka numara) etkilenmez */
+  if(link&&link.href.indexOf("wa.me/"+NUMARA)===-1)link=null;
+  if(!gonder&&!link)return;
+  guncelle();
+  if(!kilitli())return;
+  e.preventDefault();e.stopImmediatePropagation();
+  goster();
+ },true);
+})();
+</script>
 </body>
 </html>
